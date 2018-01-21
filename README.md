@@ -52,9 +52,8 @@ scala, date, string, simpledateformat, long, current date
 ## Video demo
 
 Github markdown won’t let me include a video of the application in this
-file, but you might be able to see it [in this file](README-Video.html).
-If that doesn’t work, here’s
-[a link to the video on YouTube](https://youtu.be/3vI1l97ETxw).
+file, but here’s a [a link to the two-minute video on 
+YouTube](https://youtu.be/3vI1l97ETxw).
 
 
 ## The “database”
