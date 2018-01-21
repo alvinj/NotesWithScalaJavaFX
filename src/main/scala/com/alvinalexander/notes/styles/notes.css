@@ -1,0 +1,12 @@
+.root {
+    -fx-background-color: lightgray;
+    -fx-font-family: "arial";
+    -fx-font-size: 12pt;
+}
+
+#fancytext {
+    -fx-font: 100px Tahoma;
+    -fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%);
+    -fx-stroke: black;
+    -fx-stroke-width: 1;
+}
