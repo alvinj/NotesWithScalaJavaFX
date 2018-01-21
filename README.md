@@ -51,17 +51,9 @@ scala, date, string, simpledateformat, long, current date
 
 ## Video demo
 
-Here’s a short demo video of how the application works:
-
-<div>
-<iframe width="480" height="270" 
-        src="https://www.youtube.com/embed/3vI1l97ETxw" 
-        frameborder="0" 
-        allow="autoplay; encrypted-media" allowfullscreen>
-</iframe>
-</div>
-
-If you can’t view that video for some reason, here’s
+Github markdown won’t let me include a video of the application in this
+file, but you might be able to see it [in this file](README-Video.html).
+If that doesn’t work, here’s
 [a link to the video on YouTube](https://youtu.be/3vI1l97ETxw).
 
 
