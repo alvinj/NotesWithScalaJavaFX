@@ -20,7 +20,6 @@ echo "\n"
 #--------------------------------------------------------------
 echo "Running javapackager ..."
 # SEE https://docs.oracle.com/javase/8/docs/technotes/tools/unix/javapackager.html
-JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 APP_DIR_NAME=Notes.app
 APP_NAME=Notes
 ICON_FILE=build/Notes.icns
