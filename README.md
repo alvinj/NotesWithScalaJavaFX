@@ -113,6 +113,22 @@ MacOS *Info.plist* file, and then definitely won’t be needed on Windows or
 Linux systems (so remove that line if you’re building the app on those
 systems).
 
+### Running on Linux (and maybe Windows)
+
+I just confirmed that if you build a Jar file with `sbt assembly` on Linux:
+
+````
+$ sbt assembly
+````
+
+you can then run that Jar file with this command:
+
+````
+$ scala target/scala-2.12/Notes-assembly-1.0.jar
+````
+
+Note that Scala 2.12.x is required.
+
 
 ## A few notes about the code
 
