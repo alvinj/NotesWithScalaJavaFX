@@ -23,7 +23,6 @@ object SearchUtils {
             mainController.setTableViewNotes(notes)
         } else {
             val notes = SearchUtils.searchFullDatabaseRecordForString(textToSearchFor, db)
-            notes.foreach(println)
             mainController.setTableViewNotes(notes)
         }
     }

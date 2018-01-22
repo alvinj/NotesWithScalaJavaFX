@@ -75,13 +75,34 @@ class Database {
         if (s.contains(searchFor.toLowerCase)) true else false
     }
 
-    def getAllByTag(searchFor: String): Seq[Note] = {
+    /**
+      * @param tagsUserIsSearchingFor a Seq like `Seq("foo", "bar")`
+      * @return all notes that contain all of the tags in `tagsToSearchFor`
+      */
+    def getAllByTag(tagsUserIsSearchingFor: Seq[String]): Seq[Note] = {
         val records: Seq[Seq[String]] = dataStore.getAllItemsSeparatedIntoColumns()
         val notes = for {
             rec <- records //Seq[String]
-            if rec(2) contains(searchFor)
+            if desiredTagsInTagsField(tagsUserIsSearchingFor, rec(2))
         } yield createNoteFromDatabaseRec(rec(0),rec(1),rec(2),rec(3),rec(4))
         notes
+    }
+
+    /**
+      * If the intersection of (tagsUserIsSearchingFor, tagsFromDb) is equal to
+      * tagsUserIsSearchingFor, that means that *all* of the tagsUserIsSearchingFor
+      * were found in tagsFromDb.
+      *
+      * @param tagsUserIsSearchingFor The tags the user is searching for.
+      * @param rawTagsFieldFromDb The raw string from the database.
+      * @return true if all tagsUserIsSearchingFor are found.
+      */
+    private def desiredTagsInTagsField(
+        tagsUserIsSearchingFor: Seq[String],
+        rawTagsFieldFromDb: String
+    ): Boolean = {
+        val tagsFromDb = rawTagsFieldFromDb.split(",").map(_.trim).toVector
+        tagsFromDb.intersect(tagsUserIsSearchingFor) == tagsUserIsSearchingFor
     }
 
 }
